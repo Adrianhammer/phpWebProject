@@ -1,5 +1,5 @@
 # PHP web project
-Web project for university
+Web project for university.
 
 # Contributors
 + [Adrian Hammer](https://github.com/Adrianhammer)
