@@ -6,4 +6,4 @@ Web project for university.
 + [Adel Hodzalari](https://github.com/adelh98)
 
 # Navigation map
-! [Nav map] (assets\img\FlowchartPHP.png)
+![Nav map](https://i.imgur.com/yzbebtd.png)
