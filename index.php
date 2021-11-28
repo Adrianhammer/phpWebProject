@@ -1,14 +1,19 @@
 <?php
 
-include("includes/headerFrontpage.php")
 
 ?>
 
 <!DOCTYPE html>
 <html>
-<link rel="stylesheet" href="frontpage.css">
 
-    
-</body>
+<?php 
+
+include("includes/headerFrontpage.php"); 
+include("includes/Footer.php");
+
+?>
+
+
+
 
 </html>
