@@ -5,7 +5,7 @@
         exit();
     } else{
         echo "<h2>Velkommen til medlemssystemets hjemmeside</h2><br><br>";
-        echo "<a href='testMinSide.php'>Gå til Min Side<br><br></a>";
+        echo "<a href='minSideViews.php'>Gå til Min Side<br><br></a>";
     }
 
     if (isset($_REQUEST['loggut'])) {
