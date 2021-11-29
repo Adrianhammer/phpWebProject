@@ -16,7 +16,7 @@
         <div class="container">
             <a href="#" class="brand-logo center brand-text">Medlemssystem</a>
             <ul id="nav-mobile" class="right hide-on-small-and-down">
-                <li><a href="app/controllers/login.php" class="btn brand z-depth-0">Login</a></li>
+                <li><a href="app/views/loginViews.php" class="btn brand z-depth-0">Login</a></li>
             </ul>
         </div>
     </nav>

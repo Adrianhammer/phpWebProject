@@ -1,21 +1,9 @@
 <?php
 
-    session_start();
-    if(isset($_SESSION["Fornavn"]) !== true) {
-        header("Location: ../controllers/login.php");
-        exit();
-    } else{
-        echo "Velkommen til din side<br><br>";
-        echo "<a href='testhjemmeside.php'>Tilbake til hjemmesiden</a>";
-    }
+include_once ("../../includes/session.php");
 
-    if (isset($_REQUEST['loggut'])) {
-        session_start();
-        session_unset();
-        session_destroy();
-        header("Location: ../controllers/login.php");
-        exit();
-    }
+    echo "Velkommen til din side $_SESSION[Fornavn]! <br><br>";
+    echo "<a href='testhjemmeside.php'>Tilbake til hjemmesiden</a><br>";
 
 ?>
 

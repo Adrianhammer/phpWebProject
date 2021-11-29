@@ -1,35 +1,9 @@
-<!doctype html>
-
-<html lang="en">
-<head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-
-  <title>Medlemssystem - Login</title>
-  <meta name="Login Page" content="Login">
-  <h1>Loginn</h1>
-</head>
-<body>
-    <?php
+<?php
     if(isset($_REQUEST['logginn'])) {
 
         // Include fil med passord:
-        require_once("../../includes/includeDB.php"); 
-
-        // Lager variabler for henting av passord og brukernavn
-        $brukernavn = $_REQUEST['bnavn'];
-        $passord = $_REQUEST['pord'];
-        
-        // Lager spørring
-        $sql = "SELECT Fornavn, Etternavn, Passord
-                FROM medlemmer WHERE Fornavn = ?";
-        
-        // Initialiserer spørringen og forberederen den m/ error catch
-        $stmt = mysqli_stmt_init($conn);
-        if (!mysqli_stmt_prepare($stmt, $sql)){
-            echo "Tilfeldig feil";
-            exit(); 
-        }
+        require_once("../../includes/includeDB.php");
+        include("../models/loginModels.php"); 
         
         // Binder sammen $brukernavn variabel med spørringen
         mysqli_stmt_bind_param($stmt, "s", $brukernavn);
@@ -64,19 +38,4 @@
         }
         mysqli_stmt_close($stmt);
     }
-    ?>
-
-<form action="<?php echo  $_SERVER['PHP_SELF']; ?>" method="post">
-    <div class="container">
-        <label for="bnavn"><b>Brukernavn</b></label>
-        <input type="text" placeholder="Skriv inn brukernavn" name="bnavn" required>
-
-        <label for="pord"><b>Passord</b></label>
-        <input type="password" placeholder="Skriv inn passord" name="pord" required>
-
-        <input type="submit" name="logginn" value="Logg inn">
-    </div>
-</form>
-
-</body>
-</html>
+?>
