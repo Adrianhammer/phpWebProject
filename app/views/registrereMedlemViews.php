@@ -14,7 +14,7 @@ include ("../controllers/registrereMedlemControllers.php");
   <meta name="Medlems registrering" content="Medlems registrering">
   <h1>Registrer nytt medlem</h1>
 </head>
-
+<body>
 <pre>
 <form method="post" action="<?php echo $_SERVER['PHP_SELF']; ?>">
 
@@ -52,22 +52,5 @@ include ("../controllers/registrereMedlemControllers.php");
 </pre>
 
 
-<body>
-
-<table border="1" cellpadding="5" align="center" style="text-align:center">
-<tr>
-    <th>Fornavn</th>
-    <th>Etternavn</th>
-    <th>Epost</th>
-    <th>Mobilnummer</th>
-    <th>Adresse</th>
-    <th>Kjønn</th>
-    <th>Fødseldato</th>
-    <th>Interesser</th>
-    <th>Kursaktiviteter</th>
-    <th>Kontigentstatus</th>
-</tr> 
-
-    
 </body>
 </html>
