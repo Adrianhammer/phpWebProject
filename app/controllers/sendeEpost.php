@@ -10,26 +10,52 @@
   <h1>Oppgave 1</h1>
 </head>
 <body>
+    <?php 
+    include "../../includes/session.php";
+
+        $senderName = "$_SESSION[Fornavn]" . " $_SESSION[Etternavn]";
+        echo "<h2><br>Velkommen til mail sendings tjenesten, $senderName.<br></h2> "
+    ?>
+ 
+<form method="post" action="<?php echo $_SERVER['PHP_SELF']; ?>">
+
+<h3>Send Epost:</h3>  
+  Fornavn:      
+  <br><input type="text" name="navn" placeholder="Fornavn" required><br>   
+  Etternavn:    
+  <br><input type="text" name="enavn" placeholder="Etternavn" required><br>
+  E-post:       
+  <br><input type="email" name="epost" placeholder="email@hotmail.com" required><br>
+  Melding:      
+  <br><textarea id="emailMessage" name="message" rows="5" cols="50"></textarea required><br> 
+
+  <br><input type="submit" name='send-epost' value="Send epost">
+  
+  
+</form>
 
 </body>
 
 <?php
-  
+
+
 use PHPMailer\PHPMailer\PHPMailer;
 use PHPMailer\PHPMailer\Exception;
 
-include "../../includes/session.php";
-  
+
+
 require '../../conf/vendor/autoload.php';
 require_once "../../conf/vendor/phpmailer/phpmailer/src/SMTP.php";
 
-  
+
 $mail = new PHPMailer(true);
 
-$fnavn = "$_SESSION[Fornavn]";
-$enavn = "$_SESSION[Etternavn]"; 
+if(isset($_REQUEST['send-epost'])) {
+$navn = $_REQUEST['navn'];
+$enavn = $_REQUEST['enavn'];
+
 //$kode = "abc"; // Spiller ingen rolle.
-$epost = "darkmaninside@hotmail.no"; //Din epost.
+$epost = $_REQUEST['epost']; //Din epost.
 
 
   
@@ -41,29 +67,29 @@ try {
     $mail->Username   = 'aamedlemsklubb@gmail.com'; //Din epost                 
     $mail->Password   = 'Petrus123'; // Ditt passord           
     $mail->SMTPSecure = 'tls';                              
-    $mail->Port       = 587;  
-  
+    $mail->Port       = 587;
+
+    // Hvis noe går galt, kommenter ut SMTPDebug og do_debug. Så får du debug output. 
+    $mail->SMTPDebug = false;
+    $mail->do_debug = 0; 
+    
     $mail->setFrom('aamedlemsklubb@gmail.com', 'Petrus');           
-    $mail->addAddress('darkmaninside@hotmail.no');
+    $mail->addAddress($epost);
 
     $mail->addEmbeddedImage('../../assets/img/unique-fox-logo-simple-memorable-260nw-764798020.webp', 'logo');
 
         /* Meldingstekst for HTML-mottakere */
-    $mld  = "Kjære " . $fnavn . ". <br><br>";
-    $mld .= "Takk for at du registrerer deg hos oss. <br><br>";
-    $mld .= "Vennligst klikk nedenfor for å sette opp kontoen din: <br>";
-    $mld .= '<a href="http://localhost/bekreftelse.php?k=' . $kode . '">Bekreft din registrering</a> <br><br>';
-    $mld .= "Hvis dette ikke var deg, kan du trygt ignorere denne e-posten. <br><br>";
-    $mld .= "<br><br>Denne eposten er sendt fra 'Organisasjon'.no. For mer informasjon trykk <a href='https://youtu.be/dQw4w9WgXcQ?t=1/'>her</a><br><br>";
+    $mld  = "Hei $navn $enavn,<br>";
+    $mld .= $_REQUEST['message'];
+
 
     /* Meldingstekst for de som ikke kan motta HTML-epost */
-    $amld  = "Kjære " . $fnavn . ". <br><br>";
+    $amld  = "Hei " . $navn . ". <br><br>";
     $amld .= "Takk for at du registrerer deg hos oss. \n\n";
     $amld .= "Vennligst klikk nedenfor for å sette opp kontoen din: \n";
-    $amld .= "http://localhost/bekreftelse.php?k=" . $kode . " \n\n";
     $amld .= "Hvis dette ikke var deg, kan du trygt ignorere denne e-posten. \n\n";
 
-    $footer = "Regards<br/><br/>";
+    $footer = "<br><br>Regards<br/><br/>";
         $footer .= '<table style="width: 95%">';
         $footer .= '<tr>';
         $footer .= '<td>';
@@ -80,15 +106,18 @@ try {
     
 
     $mail->isHTML(true);
-    $mail->FromName = "Ikke svar";
-    $mail->addAddress($epost, $fnavn . " " . $enavn);
-    $mail->Subject = "Registrering: kun ett steg unna nå!";
+    $mail->FromName = "No-Reply";
+    $mail->addAddress($epost, $navn . " " . $enavn);
+    $mail->Subject = "Test Subject";
     $mail->Body = $mld . $footer . "<img src=\"cid:logo\" /><br>";
     $mail->AltBody = $amld . $footer;
     $mail->send();
-    echo "E-post er sendt";
+    echo "<br>E-post er sendt";
     } catch(Exception $e) {
     echo "Noe gikk galt: " . $e->getMessage();
     }
+}
 ?>
+
+
 </html>
