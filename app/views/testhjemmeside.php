@@ -4,6 +4,7 @@
     echo "<h2>Velkommen til medlemssystemets hjemmeside</h2><br><br>";
     echo "<a href='minSideViews.php'>Gå til Min Side<br><br></a>";
     echo "<a href='../views/registrereMedlemViews.php'>Trykk her for å registrere nytt medlem<br><br></a>";
+    echo "<a href='../controllers/sendeEpost.php'>Trykk her for å sende epost<br><br></a>";
 
 ?>
 
