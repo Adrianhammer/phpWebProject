@@ -35,6 +35,25 @@ $stmt->execute();
 
 // Henter resultat
 $resultat = $stmt->get_result();
+
+?>
+
+<table border="1" cellpadding="5" align="center" style="text-align:center">
+
+<tr>
+    <th>Fornavn</th>
+    <th>Etternavn</th>
+    <th>Epost</th>
+    <th>Mobilnummer</th>
+    <th>Adresse</th>
+    <th>Kjønn</th>
+    <th>Fødseldato</th>
+    <th>Interesser</th>
+    <th>Kursaktiviteter</th>
+    <th>Kontigentstatus</th>
+</tr>
+
+<?php
     
     // Setter opp en foreach lække som går gjennom hvert element i listen og printer ut med print_r
     // Bekreftelsen på registrering til bruker
@@ -59,7 +78,6 @@ $resultat = $stmt->get_result();
         <td><?php echo $row['Interesser']; ?></td>
         <td><?php echo $row['Kursaktiviteter']; ?></td>
         <td><?php echo $row['Kontigentstatus']; ?></td>
-        
     </tr>
     
 <?php
