@@ -1,5 +1,7 @@
 <?php
 include ("../../includes/session.php");
+include ("../controllers/endreMedlemsInfoController.php");
+
 ?>
 
 <!doctype html>
@@ -15,29 +17,69 @@ include ("../../includes/session.php");
 
 <body>
 <pre>
-<form method="post" action="<?php echo $_SERVER['PHP_SELF']; ?>">
 
-<h2>Kontaktinformasjon:</h2>  
-  Fornavn: <input type="text" name="navn" placeholder="Fornavn" required><br>   
-  Etternavn: <input type="text" name="enavn" placeholder="Etternavn" required><br>
-  E-post: <input type="email" name="epost" placeholder="email@hotmail.com" required><br>
-  Telefon: <input type="tel" name="tlf" placeholder="98156123" required><br>
-  Adresse: <input type="text" name="adresse" placeholder="Lolipoppveien 45" required><br>
-  <h2>Annen informasjon:</h2>
-  Kjønn: <input type="radio" name="kjønn" id="male" value="Mann" required> <label for="mann">Mann</label> 
-         <input type="radio" name="kjønn" id="female" value="Kvinne" > <label for="kvinne">Kvinne</label><br>
-  Kontigentstatus: 
-    <input type="radio" name="kontigent" id="betalt" value="Betalt" required> <label for="betalt">Betalt</label> 
-    <input type="radio" name="kontigent" id="ikke betalt" value="Ikke betalt" > <label for="ikke betalt">Ikke betalt</label><br>
+<form action="" method="POST">
+    ID: <input type="text" name="id" placeholder="Skriv inn ID"><br>
+    <br>
+    Fornavn: <input type="text" name="fornavn" placeholder="Endre fornavn"><br>
+    <br>
+    Etternavn: <input type="text" name="etternavn" placeholder="Endre Etternavn"><br>
+    <br>
+    Epost: <input type="text" name="epost" placeholder="Endre Epost"><br>
 
-<input type="submit" name='edit' value="Endre medlemsinformasjon">
-  
-  
+    <br><input type="submit" name="update" value="Endre">
 </form>
+
+
+
+<form name="form" method="POST" action="">
+		<table border="0">
+            <tr>
+				<td>MedlemID</td>
+				<td><input type="hidden" name="medlemID" value="<?php echo $medlemID;?>"></td>
+			</tr>
+			<tr>
+				<td>Fornavn</td>
+				<td><input type="text" name="fornavn" value="<?php echo $fornavn;?>"></td>
+			</tr>
+			<tr>
+				<td>Etternavn</td>
+				<td><input type="text" name="etternavn" value="<?php echo $etternavn;?>"></td>
+			</tr>
+            <tr>
+				<td>Epost</td>
+				<td><input type="text" name="epost" value="<?php echo $epost;?>"></td>
+			</tr>
+            <tr>
+				<td>Telefonnummer</td>
+				<td><input type="tel" name="tlfnummer" value="<?php echo $tlfnummer;?>"></td>
+			</tr>
+            <tr>
+				<td>adresse</td>
+				<td><input type="text" name="adresse" value="<?php echo $adresse;?>"></td>
+			</tr>
+            <tr>
+				<td>Kjønn</td>
+				<td><input type="text" name="kjønn" value="<?php echo $kjonn;?>"></td>
+			</tr>
+            <tr>
+				<td>Fødselsdato</td>
+				<td><input type="text" name="DOB" value="<?php echo $DOB;?>"></td>
+			</tr>
+            <tr>
+				<td>Kontigentstatus</td>
+				<td><input type="text" name="kontingentstatus" value="<?php echo $kontigentstatus;?>"></td>
+			</tr>
+			<tr>
+				
+				<td><input type="submit" name="update" value="Update"></td>
+			</tr>
+		</table>
+	</form>
 
 <a href="../views/testhjemmeside.php"><button>Tilbake til hjemmeside</button></a>
 
+</form>
 </pre>
-
 </body>
 </html>

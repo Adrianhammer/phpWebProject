@@ -1,90 +1,61 @@
 <?php
 include_once ("../../includes/includeDB.php");
+include ("../models/endreMedlemsInfoModels.php");
 
 
-if(isset($_REQUEST['edit'])) {            
+echo "<br>Velg medlem</br>";
 
-    $fnavn = $_REQUEST['navn'];
-    $enavn = $_REQUEST['enavn'];
-    $epost = $_REQUEST['epost'];
-    $mobilnummer = $_REQUEST['tlf'];
-    $adresse = $_REQUEST['adresse'];
-    $kjønn = $_REQUEST['kjønn'];
-    $kontigentstatus = $_REQUEST['kontigent'];
- 
-$sql = "UPDATE medlemmer SET 
-(Fornavn = '$fnavn', Etternavn ='$enavn', Epost = '$epost', Mobilnummer = '$mobilnummer', Adresse = '$adresse', Kjønn = '$kjønn', Kontigentstatus = '$kontigentstatus') 
-WHERE (Fornavn = '$fnavn', Etternavn = '$enavn')";
+if ($r_set=$conn->query($result)) {
+    echo"<select name=members class='form-control' style='width:200px;'>";
 
- 
- $query = mysqli_query($conn, $sql);
-
-// Henter inn kun medlemmet hvor Navn og Etternavn er det samme som variabel inputten.
-$sql = "SELECT * FROM medlemmer WHERE Fornavn = ? AND Etternavn = ?"; 
-
-// Setter sammen spørringen til tilkoblingen
-$stmt = $conn->prepare( $sql );
-
-// Binder variablene sammen med SQL statementen.
-mysqli_stmt_bind_param($stmt, "ss", $fnavn, $enavn);
-
-// Utfører spørring
-$stmt->execute();
-
-// Henter resultat
-$resultat = $stmt->get_result();
-
-?>
-
-<table border="1" cellpadding="5" align="center" style="text-align:center">
-<tr>
-    <th>Fornavn</th>
-    <th>Etternavn</th>
-    <th>Epost</th>
-    <th>Mobilnummer</th>
-    <th>Adresse</th>
-    <th>Kjønn</th>
-    <th>Fødseldato</th>
-    <th>Kontigentstatus</th>
-</tr>
-
-<?php
-    
-    // Setter opp en foreach lække som går gjennom hvert element i listen og printer ut med print_r
-    // Bekreftelsen på registrering til bruker
-    if ($query) {
-        echo "Du er registrert med følgende informasjon:<br>";
-        echo "<br>";
-        echo "<br><strong>Inormasjon registrert:</strong><br>";
+    while($row=$r_set->fetch_assoc()) {
         
-        // Henter en rad om gangen fra databasen (dvs. ett og ett medlem)
-        while( $row = $resultat->fetch_assoc() ) 
-        { // Opening while
-?>
+        echo "<option value=$row[ID]> ($row[ID]) $row[Fornavn] </option>";
     
-    <tr>
-        <td><?php echo $row['Fornavn']; ?></td>
-        <td><?php echo $row['Etternavn']; ?></td>
-        <td><?php echo $row['Epost']; ?></td>
-        <td><?php echo $row['Mobilnummer']; ?></td>
-        <td><?php echo $row['Adresse']; ?></td>
-        <td><?php echo $row['Kjønn']; ?></td>
-        <td><?php echo $row['Fødselsdato']; ?></td>
-        <td><?php echo $row['Kontigentstatus']; ?></td>
-        
-    </tr>
-    
-<?php
-} // Closing while
-
-// Avslutter spørring 
-$stmt->close();
-?>
-</table>
-
-<?php 
-// Avslutter databasetilkobling
-$conn->close();
-        }
     }
+
+    echo "</select>";
+
+} else {
+    echo $conn->error;
+}
+
+
+
+$result = mysqli_query($conn, "SELECT * FROM Medlemmer WHERE ID = 1");
+
+    while($res = mysqli_fetch_array($result))
+{
+    $medlemID = $res['ID'];
+	$fornavn = $res['Fornavn'];
+	$etternavn = $res['Etternavn'];
+    $epost = $res['Epost'];
+	$tlfnummer = $res['Mobilnummer'];
+	$adresse = $res['Adresse'];
+    $kjonn = $res['Kjønn'];
+	$DOB = $res['Fødselsdato'];
+	$kontigentstatus = $res['Kontigentstatus'];
+}
+
+
+
+/*
+if(isset($_POST["update"])) {
+    $id = $_POST['id'];
+    
+
+    $query = "UPDATE medlemmer SET Fornavn='$_POST[fornavn]', Etternavn='$_POST[etternavn]', Epost='$_POST[epost]' WHERE id= $id"; 
+    $queryRun = mysqli_query($conn, $query);
+
+    if($queryRun) {
+        echo '<script type="text/javascript"> alert("Data updated")</script>';
+    } else {
+        echo '<script type="text/javascript"> alert("Data not updated")</script>';
+    }
+} */
+
+//$id = $_GET['medlemID'];
+
+
+
 ?>
