@@ -39,6 +39,7 @@ $resultat = $stmt->get_result();
 ?>
 
 <table border="1" cellpadding="5" align="center" style="text-align:center">
+
 <tr>
     <th>Fornavn</th>
     <th>Etternavn</th>
@@ -51,7 +52,8 @@ $resultat = $stmt->get_result();
     <th>Kursaktiviteter</th>
     <th>Kontigentstatus</th>
 </tr>
- 
+
+
 <?php
 
     
@@ -78,7 +80,6 @@ $resultat = $stmt->get_result();
         <td><?php echo $row['Interesser']; ?></td>
         <td><?php echo $row['Kursaktiviteter']; ?></td>
         <td><?php echo $row['Kontigentstatus']; ?></td>
-        
     </tr>
     
 <?php

@@ -7,3 +7,7 @@ Web project for university.
 
 # Navigation map
 ![Nav map](https://i.imgur.com/yzbebtd.png)
+
+# Brukernavn&Passord
++ Brukernavn: Petrus
++ Passord: Test

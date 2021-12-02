@@ -9,13 +9,13 @@ include ("../controllers/registrereMedlemControllers.php");
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-
   <title>Registrere medlem</title>
   <meta name="Medlems registrering" content="Medlems registrering">
   <h1>Registrer nytt medlem</h1>
 </head>
 <body>
 <pre>
+
 <form method="post" action="<?php echo $_SERVER['PHP_SELF']; ?>">
 
 <h2>Kontaktinformasjon:</h2>  
@@ -50,7 +50,5 @@ include ("../controllers/registrereMedlemControllers.php");
 </form>
 <a href="../views/testhjemmeside.php"><button>Tilbake til hjemmeside</button></a>
 </pre>
-
-
 </body>
 </html>
