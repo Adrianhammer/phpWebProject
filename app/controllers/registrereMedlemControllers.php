@@ -53,7 +53,9 @@ $resultat = $stmt->get_result();
     <th>Kontigentstatus</th>
 </tr>
 
+
 <?php
+
     
     // Setter opp en foreach lække som går gjennom hvert element i listen og printer ut med print_r
     // Bekreftelsen på registrering til bruker
