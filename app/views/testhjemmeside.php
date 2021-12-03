@@ -7,6 +7,7 @@
     echo "<a href='../controllers/sendeEpost.php'>Trykk her for å sende epost<br><br></a>";
     echo "<a href='../controllers/henteMedlem.php'>Trykk her for å hente medlemmer<br><br></a>";
     echo "<a href='../controllers/endreMedlem.php'>Trykk her for å endre medlemmer<br><br></a>";
+    echo "<a href='../controllers/lageAktivitet.php'>Trykk her for å lage en aktivitet<br><br></a>";
 
 
 ?>
