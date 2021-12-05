@@ -13,6 +13,7 @@
 <?php
 
     
+
 // Lager SQL spørringen som jeg skal bruke i $sql variablen.
 //$sql = "SELECT * FROM medlemmer WHERE Fødselsdato BETWEEN ? AND ? ORDER BY Fødselsdato";
 $sql = "SELECT * FROM medlemmer order by ID";
@@ -71,7 +72,7 @@ while( $row = $resultat->fetch_assoc() )
         <td><?php echo $row['Interesser2']; ?></td>
         <td><?php echo $row['Kursaktiviteter']; ?></td>
         <td><?php echo $row['Kontigentstatus']; ?></td>
-        <td><a href="endreMedlemForm.php?id=<?php echo $row['ID']; ?>">Endre</a></td>
+        <td><a href="endreMedlemForm.php? id=<?php echo $row['ID']?>;">Endre</a></td>
 
     </tr>
 
@@ -90,3 +91,5 @@ while( $row = $resultat->fetch_assoc() )
 
 
 ?>
+
+<a href="../views/testhjemmeside.php"><button>Tilbake til hjemmeside</button></a>

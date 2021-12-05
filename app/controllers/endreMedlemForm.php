@@ -3,10 +3,11 @@ include ("../../includes/includeDB.php");
 include ("../../includes/session.php");
 include ("../models/endreMedlemModels.php");
 
+$id = $_GET['id']; 
 
-    $id = $_GET['id']; 
 
-    $result = mysqli_query($conn, "SELECT * FROM medlemmer WHERE ID = $id");
+$result = mysqli_query($conn, "SELECT * FROM medlemmer WHERE ID = $id");
+
 
  while($res = mysqli_fetch_array($result))
  {
@@ -21,23 +22,8 @@ include ("../models/endreMedlemModels.php");
      $kontigentstatus = $res['Kontigentstatus'];
  } 
 
-   
-
-
- if(isset($_POST["update"])) {
-    $query = "UPDATE medlemmer SET Fornavn='$_POST[fornavn]', Etternavn='$_POST[etternavn]', Epost='$_POST[epost]', Mobilnummer='$_POST[tlfnummer]', Adresse='$_POST[adresse]', Kjønn='$_POST[kjønn]', Fødselsdato='$_POST[DOB]', Kontigentstatus='$_POST[kontingentstatus]' WHERE ID= 7"; 
-
-    $queryRun = mysqli_query($conn, $query);
-
-    if($queryRun) {
-        echo '<script type="text/javascript"> alert("Data updated")</script>';
-    } else {
-        echo '<script type="text/javascript"> alert("Data not updated")</script>';
-    }
-}
-
+ 
 ?>
-
 
 <!doctype html>
 <html lang="en">
@@ -53,7 +39,7 @@ include ("../models/endreMedlemModels.php");
 <body>
 <pre>
 
-<form name="form" method="POST" action="endreMedlemForm.php">
+<form name="form" method="POST" action="updateMedlem.php">
 		<table border="0">
             <tr>
 				<td>MedlemID</td>
@@ -98,9 +84,9 @@ include ("../models/endreMedlemModels.php");
 		</table>
 	</form>
 
-<a href="../views/testhjemmeside.php"><button>Tilbake til hjemmeside</button></a>
 
 </form>
+<a href="../views/testhjemmeside.php"><button>Tilbake til hjemmeside</button></a>
 </pre>
 </body>
 </html>
