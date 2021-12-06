@@ -1,6 +1,8 @@
 <?php
 include ("../../includes/session.php");
 include ("../controllers/registrereMedlemControllers.php");
+include ("../../includes/navbar.php");
+
 
 ?>
 

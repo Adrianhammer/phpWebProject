@@ -1,18 +1,7 @@
 <?php 
-    include "../../includes/session.php";
-    include_once "../../includes/includeDB.php";
+include "../../includes/session.php";
+include_once "../../includes/includeDB.php";
 
-
-        $senderName = "$_SESSION[Fornavn]" . " $_SESSION[Etternavn]";
-        echo "<h2><br>Velkommen til endre medlemmer tjenesten, $senderName.<br></h2> "
-    ?>
-        <h3>Her har du oversikt over alle medlemmene:</h3>
-        <h4>Velg mellom hvilke medlemmer du ønsker å endre.</h4>      
-    
-   
-<?php
-
-    
 
 // Lager SQL spørringen som jeg skal bruke i $sql variablen.
 //$sql = "SELECT * FROM medlemmer WHERE Fødselsdato BETWEEN ? AND ? ORDER BY Fødselsdato";
@@ -32,8 +21,8 @@ $resultat = $stmt->get_result();
 
 ?>
 
-<html>
         <!-- Lager en tabell som viser de aktuelle konkuransene -->
+        
         <table border="1" cellpadding="5" align="center" style="text-align:center">
         <tr>
             <th>ID</th>
@@ -49,7 +38,6 @@ $resultat = $stmt->get_result();
             <th>Kursaktiviteter</th>
             <th>Kontigentstatus</th>
             <th>Endre</th>
-
         </tr>
 
 <?php 
@@ -73,7 +61,6 @@ while( $row = $resultat->fetch_assoc() )
         <td><?php echo $row['Kursaktiviteter']; ?></td>
         <td><?php echo $row['Kontigentstatus']; ?></td>
         <td><a href="endreMedlemForm.php? id=<?php echo $row['ID']?>;">Endre</a></td>
-
     </tr>
 
     <?php
@@ -91,5 +78,3 @@ while( $row = $resultat->fetch_assoc() )
 
 
 ?>
-
-<a href="../views/testhjemmeside.php"><button>Tilbake til hjemmeside</button></a>

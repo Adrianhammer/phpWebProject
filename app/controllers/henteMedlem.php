@@ -1,36 +1,4 @@
-<!doctype html>
-
-<html lang="en">
-<head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-
-  <title>Hente Medlem</title>
-  <meta name="Henter Medlemer fra Databasen" content="Medlem fra Database">
-  <h1>Hent medlemmer</h1>
-</head>
-<body>
-    <?php 
-    include "../../includes/session.php";
-
-        $senderName = "$_SESSION[Fornavn]" . " $_SESSION[Etternavn]";
-        echo "<h2><br>Velkommen til hente medlemmer tjenesten, $senderName.<br></h2> "
-    ?>
-    <form method="post" action="<?php echo $_SERVER['PHP_SELF']; ?>">
-
-        <h3>Hent medlemmer:</h3>
-        <h4>Velg mellom hvilke dato du ønsker å hente medlemmer.</h4>  
-        Fra dato:      
-        <br><input type="date" name="fromDate" value="2011-01-05" required><br>   
-        Til dato:    
-        <br><input type="date" name="toDate" value="2009-01-08" required><br> 
-
-    <br><input type="submit" name='hent-medlem' value="Hent Medlem">
-    
-    
-    </form>
-    
-    <?php
+<?php
     // Include fil med passord:
     include_once "../../includes/includeDB.php";
 
