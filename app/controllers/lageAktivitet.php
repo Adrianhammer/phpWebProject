@@ -25,7 +25,7 @@ if(isset($_REQUEST['submit'])) {
     $stmt = $conn->prepare( $sql );
 
     // Binder variablene sammen med SQL statementen.
-    // mysqli_stmt_bind_param($stmt, "ss", $fnavn, $enavn);
+    //mysqli_stmt_bind_param($stmt, "sssss", $$aktivitet, $$ansvarlig, $timeFrom, $timeTo, $fromDate);
 
     // Utfører spørring
     $stmt->execute();

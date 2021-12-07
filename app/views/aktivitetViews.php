@@ -14,7 +14,7 @@ include ("../../includes/Footer.php");
 </head>
 <body>
     
-    <form action="lageAktivitet.php" method="get">
+    <form action="../controllers/lageAktivitet.php" method="get">
         Aktivitet: 
         <br><select name="aktivitet">
             <option value="select" disable selected>--Velg Aktivitet--</option>
