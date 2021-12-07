@@ -51,7 +51,7 @@ button:hover {
 
 
 
-while($data = mysqli_fetch_array($records)) {
+$data = mysqli_fetch_array($records);
     ?>
 
 <br /><br /><br />
@@ -67,9 +67,7 @@ while($data = mysqli_fetch_array($records)) {
 
   <p><button>Endre info</button></p>
 </div>
-<?php
-}
-?>
+
 
 
 
