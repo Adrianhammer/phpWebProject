@@ -6,18 +6,24 @@ if(isset($_REQUEST['registrer'])) {
 
     $fnavn = $_REQUEST['navn'];
     $enavn = $_REQUEST['enavn'];
+    $bnavn = $_REQUEST['brukernavn'];
     $epost = $_REQUEST['epost'];
     $passord = password_hash($_REQUEST['passord'], PASSWORD_DEFAULT); //Hasher passordet før det sendes til DB
     $mobilnummer = $_REQUEST['tlf'];
     $adresse = $_REQUEST['adresse'];
+    $postnummer = $_REQUEST['postnummer'];
+    $poststed = $_REQUEST['poststed'];
     $kjønn = $_REQUEST['kjønn'];
     $fdato = $_REQUEST['fdato'];
+    $medlemsiden = date('Y-m-d H:i:s');
     $interesser = $_REQUEST['interesser'];
     $kursaktiviteter = $_REQUEST['kursaktiviteter'];
+    $rolle1 = $_REQUEST['rolle1'];
+    $rolle2 = $_REQUEST['rolle2'];
     $kontigentstatus = $_REQUEST['kontigent'];
  
-$sql = "INSERT INTO medlemmer (Fornavn, Etternavn, Epost, Passord, Mobilnummer, Adresse, Kjønn, Fødselsdato, Interesser, Kursaktiviteter, Kontigentstatus) 
-    VALUES ('$fnavn', '$enavn', '$epost', '$passord', '$mobilnummer', '$adresse', '$kjønn', '$fdato', '$interesser', '$kursaktiviteter', '$kontigentstatus')";
+$sql = "INSERT INTO medlemmer (Fornavn, Etternavn, Brukernavn, Epost, Passord, Mobilnummer, Adresse, Postnummer, Poststed, Kjønn, Fødselsdato, MedlemSiden, Interesser, Kursaktiviteter, Rolle1, Rolle2, Kontigentstatus) 
+    VALUES ('$fnavn', '$enavn', '$bnavn', '$epost', '$passord', '$mobilnummer', '$adresse', '$postnummer', '$poststed', '$kjønn', '$fdato', '$medlemsiden', '$interesser', '$kursaktiviteter', '$rolle1', '$rolle2', '$kontigentstatus')";
  
  $query = mysqli_query($conn, $sql);
 
@@ -46,10 +52,15 @@ $resultat = $stmt->get_result();
     <th>Epost</th>
     <th>Mobilnummer</th>
     <th>Adresse</th>
+    <th>Postnummer</th>
+    <th>Poststed</th>
     <th>Kjønn</th>
     <th>Fødseldato</th>
+    <th>Medlem siden</th>
     <th>Interesser</th>
     <th>Kursaktiviteter</th>
+    <th>Rolle 1</th>
+    <th>Rolle 2</th>
     <th>Kontigentstatus</th>
 </tr>
 
@@ -75,10 +86,15 @@ $resultat = $stmt->get_result();
         <td><?php echo $row['Epost']; ?></td>
         <td><?php echo $row['Mobilnummer']; ?></td>
         <td><?php echo $row['Adresse']; ?></td>
+        <td><?php echo $row['Postnummer']; ?></td>
+        <td><?php echo $row['Poststed']; ?></td>
         <td><?php echo $row['Kjønn']; ?></td>
         <td><?php echo $row['Fødselsdato']; ?></td>
+        <td><?php echo $row['MedlemSiden']; ?></td>
         <td><?php echo $row['Interesser']; ?></td>
         <td><?php echo $row['Kursaktiviteter']; ?></td>
+        <td><?php echo $row['Rolle1']; ?></td>
+        <td><?php echo $row['Rolle2']; ?></td>
         <td><?php echo $row['Kontigentstatus']; ?></td>
     </tr>
     
