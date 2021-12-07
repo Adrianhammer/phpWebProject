@@ -15,7 +15,11 @@ include ("../../includes/Footer.php");
 <h3>Her har du oversikt over alle medlemmene:</h3>
 <h4>Velg mellom hvilke medlemmer du ønsker å endre.</h4> 
 
-<?php include ("../controllers/endreMedlem.php"); ?>
+<?php 
+include ("../controllers/endreMedlem.php"); 
+
+?>
+
     
 </body>
 </html>
