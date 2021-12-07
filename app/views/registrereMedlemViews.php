@@ -1,5 +1,5 @@
 <?php
-//include ("../../includes/session.php");
+include ("../../includes/session.php");
 include ("../controllers/registrereMedlemControllers.php");
 include ("../../includes/navbar.php");
 include ("../../includes/Footer.php");
