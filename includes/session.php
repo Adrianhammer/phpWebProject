@@ -1,7 +1,7 @@
 <?php
     session_start();
     if(isset($_SESSION["Fornavn"]) !== true) {
-        header("Location: ../controllers/login.php");
+        header("Location: ../views/loginViews.php");
         exit();
     } else{
         
@@ -13,7 +13,7 @@
         session_start();
         session_unset();
         session_destroy();
-        header("Location: ../controllers/login.php");
+        header("Location: ../../index.php");
         exit();
     }
 ?>
