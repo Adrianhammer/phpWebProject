@@ -1,5 +1,7 @@
 <?php 
 include("../../includes/navbar.php"); 
+include ("../../includes/Footer.php");
+
 ?>  
 <html lang="en">
 <head>

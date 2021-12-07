@@ -33,21 +33,6 @@ body {
   color: white;
 }
 
-.topnav b {
-  float: right;
-  color: #f2f2f2;
-  text-align: center;
-  padding: 14px 16px;
-  text-decoration: none;
-  font-size: 17px;
-}
-
-.topnav b:hover {
-  background-color: #ddd;
-  color: black;
-}
-
-
 </style>
 </head>
 <body>

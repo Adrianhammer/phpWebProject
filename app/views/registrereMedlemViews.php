@@ -2,6 +2,8 @@
 include ("../../includes/session.php");
 include ("../controllers/registrereMedlemControllers.php");
 include ("../../includes/navbar.php");
+include ("../../includes/Footer.php");
+
 
 
 ?>
@@ -50,7 +52,6 @@ include ("../../includes/navbar.php");
   
   
 </form>
-<a href="../views/testhjemmeside.php"><button>Tilbake til hjemmeside</button></a>
 </pre>
 </body>
 </html>

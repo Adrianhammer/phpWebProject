@@ -1,5 +1,7 @@
 <?php
 include ("../../includes/navbar.php");
+include ("../../includes/Footer.php");
+
 
 ?>
 <!doctype html>
@@ -31,10 +33,3 @@ include ("../../includes/navbar.php");
 include ("../controllers/henteMedlem.php");
 
 ?>
-    
-    
-
-
-
-
-    

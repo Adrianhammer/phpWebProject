@@ -1,6 +1,8 @@
 <?php 
 include ("../controllers/sendeEpost.php");
 include ("../../includes/navbar.php");
+include ("../../includes/Footer.php");
+
 ?>
 <!doctype html>
 

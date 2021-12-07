@@ -1,10 +1,8 @@
 <?php
-    include_once ("../../includes/session.php");
-    include ("../../includes/navbar.php");
+include_once ("../../includes/session.php");
+include ("../../includes/navbar.php");
+include ("../../includes/Footer.php");
 
-
-    echo "<h2>Velkommen til medlemssystemets hjemmeside</h2><br><br>";
- 
 ?>
 
 <html lang="en">
@@ -15,11 +13,21 @@
     <title>Hjem</title>
 </head>
 <body>
+<h2>Velkommen til medlemssystemets hjemmeside</h2><br><br> 
+
+
+
+
+
+
+
+
+
 
 <form action ="<?php echo $_SERVER['PHP_SELF'];?>" method="request">
 <input type="submit" name="loggut" value="Logg Ut">
-
 </form>
+
 </body>
 </html>
 

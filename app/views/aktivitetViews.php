@@ -1,6 +1,8 @@
 <?php
 include ("../../includes/navbar.php");
 include ("../controllers/lageAktivitet.php");
+include ("../../includes/Footer.php");
+
 
 ?>
 <html lang="en">

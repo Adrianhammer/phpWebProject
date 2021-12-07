@@ -13,7 +13,7 @@
         session_start();
         session_unset();
         session_destroy();
-        header("Location: ../views/loginViews.php");
+        header("Location: ../../index.php");
         exit();
     }
 ?>

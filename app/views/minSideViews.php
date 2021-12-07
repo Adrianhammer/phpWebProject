@@ -3,6 +3,8 @@ include_once ("../../includes/session.php");
 include ("../../includes/navbar.php");
 include ("../../includes/includeDB.php");
 require_once ("../models/minSideModels.php");
+include ("../../includes/Footer.php");
+
 ?>
 
 <!DOCTYPE html>
