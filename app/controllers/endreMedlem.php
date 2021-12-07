@@ -60,7 +60,8 @@ while( $row = $resultat->fetch_assoc() )
         <td><?php echo $row['Interesser2']; ?></td>
         <td><?php echo $row['Kursaktiviteter']; ?></td>
         <td><?php echo $row['Kontigentstatus']; ?></td>
-        <td><a href="endreMedlemForm.php? id=<?php echo $row['ID']?>;">Endre</a></td>
+        <td><a href="../controllers/endreMedlemForm.php? id=<?php echo $row['ID']?>;">Endre</a></td>
+
     </tr>
 
     <?php

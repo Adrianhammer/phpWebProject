@@ -1,7 +1,7 @@
 <?php
 include "../../includes/includeDB.php";
 include "../../includes/session.php";
-include ("../../includes/navbar.php");
+
 
 
 if(isset($_REQUEST['submit'])) {
