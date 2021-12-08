@@ -62,7 +62,9 @@ $data = mysqli_fetch_array($records);
   <p class="title">Bruker ID:<?php echo $data["ID"]; ?></p>
   <p class="title">Epost: <?php echo $data["Epost"]; ?></p>
   <p class="title">Mobilnummer: <?php echo $data["Mobilnummer"]; ?></p>
-  <p class="title">Land: <?php echo $data["Adresse"]; ?></p>
+  <p class="title">Adresse: <?php echo $data["Adresse"];?></p>
+  <p class="title">Postnummer: <?php echo $data["Postnummer"];?></p>
+  <p class="title">Poststed: <?php echo $data["Poststed"];?></p>
   <p class="title">Fødselsdato: <?php echo $data["Fødselsdato"]; ?></p>
 
   
