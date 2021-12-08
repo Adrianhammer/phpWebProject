@@ -2,9 +2,11 @@
 include ("../../includes/navbar.php");
 include ("../../includes/Footer.php");
 include ("../../includes/includeDB.php");
+include ("../controllers/sendeEpost.php");
+
+$id = $_REQUEST['id'] ?? null; 
 
 if (isset($id)) {
-$id = $_REQUEST['id']; 
 
 $result = mysqli_query($conn, "SELECT * FROM medlemmer WHERE ID = $id");
 
@@ -45,9 +47,9 @@ $res = mysqli_fetch_array($result);
 </form>
 
 <?php
-include ("../controllers/sendeEpost.php");
 
 } else {
+
   ?>
 
 <form method="post" action="<?php echo $_SERVER['PHP_SELF']; ?>">
@@ -65,10 +67,10 @@ include ("../controllers/sendeEpost.php");
   <br><input type="submit" name='send-epost' value="Send epost">
   
 </form>
-<?php  
 
-include ("../controllers/sendeEpost.php");
-}
+<?php 
+} 
 ?>
+
 </body>
 </html>
