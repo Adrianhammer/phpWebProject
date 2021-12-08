@@ -60,6 +60,8 @@ include ("../../includes/Footer.php");
 </form>
 </pre>
 
+
+
 <?php
 include ("../controllers/registrereMedlemControllers.php");
 ?>

@@ -15,9 +15,30 @@ include ("../../includes/Footer.php");
 <h3>Her har du oversikt over alle medlemmene:</h3>
 <h4>Velg mellom hvilke medlemmer du ønsker å endre.</h4> 
 
+<table border="1" cellpadding="5" align="center" style="text-align:center">
+        <tr>
+            <th>Fornavn</th>
+            <th>Etternavn</th>
+            <th>Brukernavn</th>
+            <th>Epost</th>
+            <th>Mobilnummer</th>
+            <th>Adresse</th>
+            <th>Postnummer</th>
+            <th>Poststed</th>
+            <th>Kjønn</th>
+            <th>Fødselsdato</th>
+            <th>Medlem siden</th>
+            <th>Interesser</th>
+            <th>Kursaktiviteter</th>
+            <th>Rolle 1</th>
+            <th>Rolle 2</th>
+            <th>Kontigentstatus</th>
+            <th>Endre</th>
+            <th>Slett</th>
+        </tr>
+
 <?php 
 include ("../controllers/endreMedlem.php"); 
-
 ?>
 
     

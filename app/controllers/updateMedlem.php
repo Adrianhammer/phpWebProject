@@ -20,13 +20,7 @@ if(isset($_POST["update"])) {
     $query = mysqli_query($conn, "UPDATE medlemmer SET Fornavn='$fornavn', Etternavn='$etternavn', Epost='$epost', Mobilnummer='$tlfnummer', Adresse='$adresse', Kjønn='$kjønn', Fødselsdato='$fødselsdato', Kontigentstatus='$kontigentstatus' WHERE ID= $id");
 
 
-    if($query) {
-        echo '<script type="text/javascript"> alert("Data updated")</script>';
-    } else {
-        echo '<script type="text/javascript"> alert("Data not updated")</script>';
-    }
-
-    header("Location: endreMedlem.php");
+    header("Location: ../views/endreMedlemViews.php");
 
 }
 

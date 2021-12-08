@@ -1,3 +1,16 @@
 <?php
-$result = mysqli_query($conn, "SELECT * FROM medlemmer WHERE ID = $id");
+
+
+$sql = "SELECT * FROM medlemmer order by ID";
+
+
+$stmt = $conn->prepare($sql);
+
+$stmt->execute();
+
+// Henter resultat
+$resultat = $stmt->get_result();
+
+
+
 ?>

@@ -43,7 +43,7 @@ try {
 
     /* Meldingstekst for de som ikke kan motta HTML-epost */
     $amld  = "Hei " . $navn . ". <br><br>";
-    $amld .= "Takk for at du registrerer deg hos oss. \n\n";
+    $amld .= "Takk for at du ble medlem hos oss. \n\n";
     $amld .= "Vennligst klikk nedenfor for å sette opp kontoen din: \n";
     $amld .= "Hvis dette ikke var deg, kan du trygt ignorere denne e-posten. \n\n";
 
@@ -51,8 +51,8 @@ try {
         $footer .= '<table style="width: 95%">';
         $footer .= '<tr>';
         $footer .= '<td>';
-        $footer .= "<strong><span style='font-size: 15px'>Adel Hodz Inc</span></strong><br/>
-                        Adel Hodzalari<br/>
+        $footer .= "<strong><span style='font-size: 15px'>Prosjektgruppe 27</span></strong><br/>
+                        Adel Hodzalari & Adrian Hammer<br/>
                         Telefonnummer: 12345678 <br/>
                         E-post: Organisasjon@gmail.com <br/>
                         Nettside: https//:organsiasjon.no<br/>";
@@ -61,7 +61,6 @@ try {
         $footer .= '</td>';
         $footer .= '</tr>';
         $footer .= '</table>';
-    
 
     $mail->isHTML(true);
     $mail->FromName = "No-Reply";

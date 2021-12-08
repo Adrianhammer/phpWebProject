@@ -1,6 +1,6 @@
 <?php
 include_once ("../../includes/includeDB.php");
-//include ("../models/registrereMedlemModels.php");
+
             
 if(isset($_REQUEST['registrer'])) {            
 
@@ -22,26 +22,9 @@ if(isset($_REQUEST['registrer'])) {
     $rolle2 = $_REQUEST['rolle2'];
     $kontigentstatus = $_REQUEST['kontigent'];
  
-$sql = "INSERT INTO medlemmer (Fornavn, Etternavn, Brukernavn, Epost, Passord, Mobilnummer, Adresse, Postnummer, Poststed, Kjønn, Fødselsdato, MedlemSiden, Interesser, Kursaktiviteter, Rolle1, Rolle2, Kontigentstatus) 
-    VALUES ('$fnavn', '$enavn', '$bnavn', '$epost', '$passord', '$mobilnummer', '$adresse', '$postnummer', '$poststed', '$kjønn', '$fdato', '$medlemsiden', '$interesser', '$kursaktiviteter', '$rolle1', '$rolle2', '$kontigentstatus')";
- 
- $query = mysqli_query($conn, $sql);
-
-// Henter inn kun medlemmet hvor Navn og Etternavn er det samme som variabel inputten.
-$sql = "SELECT * FROM medlemmer WHERE Fornavn = ? AND Etternavn = ?"; 
-
-// Setter sammen spørringen til tilkoblingen
-$stmt = $conn->prepare( $sql );
-
-// Binder variablene sammen med SQL statementen.
-mysqli_stmt_bind_param($stmt, "ss", $fnavn, $enavn);
-
-// Utfører spørring
-$stmt->execute();
-
-// Henter resultat
-$resultat = $stmt->get_result();
-
+    
+    include ("../models/registrereMedlemModels.php");
+    
 ?>
 
 <table border="1" cellpadding="5" align="center" style="text-align:center">
@@ -65,20 +48,14 @@ $resultat = $stmt->get_result();
     <th>Kontigentstatus</th>
 </tr>
 
-
 <?php
-
-    
-    // Setter opp en foreach lække som går gjennom hvert element i listen og printer ut med print_r
-    // Bekreftelsen på registrering til bruker
     if ($query) {
-        echo "Du er registrert med følgende informasjon:<br>";
-        echo "<br>";
+        echo '<script type="text/javascript"> alert("Medlem registrert")</script>';
         echo "<br><strong>Informasjon registrert:</strong><br>";
         
         // Henter en rad om gangen fra databasen (dvs. ett og ett medlem)
         while( $row = $resultat->fetch_assoc() ) 
-        { // Opening while
+        { 
 ?>
     
     <tr>
@@ -102,15 +79,13 @@ $resultat = $stmt->get_result();
     
 <?php
     
-} // Closing while
+} 
 
-// Avslutter spørring 
 $stmt->close();
 ?>
 </table>
 
 <?php 
-// Avslutter databasetilkobling
 $conn->close();
         }
     }

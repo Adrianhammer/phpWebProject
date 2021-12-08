@@ -3,11 +3,8 @@ include ("../../includes/navbar.php");
 include ("../../includes/Footer.php");
 include ("../../includes/includeDB.php");
 
-error_reporting(E_ERROR);
-
-$id = $_GET['id']; 
-
 if (isset($id)) {
+$id = $_REQUEST['id']; 
 
 $result = mysqli_query($conn, "SELECT * FROM medlemmer WHERE ID = $id");
 
@@ -17,8 +14,8 @@ $res = mysqli_fetch_array($result);
      $fornavn = $res['Fornavn'];
      $etternavn = $res['Etternavn'];
      $epost = $res['Epost'];
-}
-  ?>
+     
+     ?>
 
 <!doctype html>
 
@@ -49,6 +46,26 @@ $res = mysqli_fetch_array($result);
 
 <?php
 include ("../controllers/sendeEpost.php");
+} else {
+  ?>
+
+<form method="post" action="<?php echo $_SERVER['PHP_SELF']; ?>">
+
+<h3>Send Epost:</h3>  
+  Fornavn:      
+  <br><input type="text" name="navn" placeholder="Fornavn"  required><br>   
+  Etternavn:    
+  <br><input type="text" name="enavn" placeholder="Etternavn"  required><br>
+  E-post:       
+  <br><input type="email" name="epost" placeholder="email@hotmail.com"  required><br>
+  Melding:      
+  <br><textarea id="emailMessage" name="message" rows="5" cols="50"></textarea required><br> 
+
+  <br><input type="submit" name='send-epost' value="Send epost">
+  
+</form>
+<?php  
+}
 ?>
 </body>
 </html>
