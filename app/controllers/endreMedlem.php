@@ -25,19 +25,24 @@ $resultat = $stmt->get_result();
         
         <table border="1" cellpadding="5" align="center" style="text-align:center">
         <tr>
-            <th>ID</th>
             <th>Fornavn</th>
             <th>Etternavn</th>
+            <th>Brukernavn</th>
             <th>Epost</th>
             <th>Mobilnummer</th>
             <th>Adresse</th>
+            <th>Postnummer</th>
+            <th>Poststed</th>
             <th>Kjønn</th>
             <th>Fødselsdato</th>
+            <th>Medlem siden</th>
             <th>Interesser</th>
-            <th>Interesser2</th>
             <th>Kursaktiviteter</th>
             <th>Kontigentstatus</th>
+            <th>Rolle 1</th>
+            <th>Rolle 2</th>
             <th>Endre</th>
+            <th>Slett</th>
         </tr>
 
 <?php 
@@ -48,19 +53,24 @@ while( $row = $resultat->fetch_assoc() )
 
 ?>
     <tr>
-        <td><?php echo $row['ID']; ?></td>
         <td><?php echo $row['Fornavn']; ?></td>
         <td><?php echo $row['Etternavn']; ?></td>
+        <td><?php echo $row['Brukernavn']; ?></td>
         <td><?php echo $row['Epost']; ?></td>
         <td><?php echo $row['Mobilnummer']; ?></td>
         <td><?php echo $row['Adresse']; ?></td>
+        <td><?php echo $row['Postnummer']; ?></td>
+        <td><?php echo $row['Poststed']; ?></td>
         <td><?php echo $row['Kjønn']; ?></td>
         <td><?php echo $row['Fødselsdato']; ?></td>
+        <td><?php echo $row['MedlemSiden']; ?></td>
         <td><?php echo $row['Interesser']; ?></td>
-        <td><?php echo $row['Interesser2']; ?></td>
         <td><?php echo $row['Kursaktiviteter']; ?></td>
+        <td><?php echo $row['Rolle1']; ?></td>
+        <td><?php echo $row['Rolle2']; ?></td>
         <td><?php echo $row['Kontigentstatus']; ?></td>
         <td><a href="../controllers/endreMedlemForm.php? id=<?php echo $row['ID']?>;">Endre</a></td>
+        <td><a href="../controllers/slettMedlem.php? id=<?php echo $row['ID']?>;">Slett</a></td>
 
     </tr>
 
