@@ -49,6 +49,7 @@ $resultat = $stmt->get_result();
 <tr>
     <th>Fornavn</th>
     <th>Etternavn</th>
+    <th>Brukernavn</th>
     <th>Epost</th>
     <th>Mobilnummer</th>
     <th>Adresse</th>
@@ -73,7 +74,7 @@ $resultat = $stmt->get_result();
     if ($query) {
         echo "Du er registrert med følgende informasjon:<br>";
         echo "<br>";
-        echo "<br><strong>Inormasjon registrert:</strong><br>";
+        echo "<br><strong>Informasjon registrert:</strong><br>";
         
         // Henter en rad om gangen fra databasen (dvs. ett og ett medlem)
         while( $row = $resultat->fetch_assoc() ) 
@@ -83,6 +84,7 @@ $resultat = $stmt->get_result();
     <tr>
         <td><?php echo $row['Fornavn']; ?></td>
         <td><?php echo $row['Etternavn']; ?></td>
+        <td><?php echo $row['Brukernavn']; ?></td>
         <td><?php echo $row['Epost']; ?></td>
         <td><?php echo $row['Mobilnummer']; ?></td>
         <td><?php echo $row['Adresse']; ?></td>

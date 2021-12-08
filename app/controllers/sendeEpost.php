@@ -70,7 +70,7 @@ try {
     $mail->Body = $mld . $footer . "<img src=\"cid:logo\" /><br>";
     $mail->AltBody = $amld . $footer;
     $mail->send();
-    echo "<br>E-post er sendt";
+    echo '<br /><script type="text/javascript"> alert("Epost sendt")</script>';
     } catch(Exception $e) {
     echo "Noe gikk galt: " . $e->getMessage();
     }

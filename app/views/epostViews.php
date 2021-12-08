@@ -1,10 +1,8 @@
 <?php 
-include ("../controllers/sendeEpost.php");
 include ("../../includes/navbar.php");
 include ("../../includes/Footer.php");
 include ("../../includes/includeDB.php");
 
-//hahahahahahahhaahhahahha
 error_reporting(E_ERROR);
 
 $id = $_GET['id']; 
@@ -19,10 +17,8 @@ $res = mysqli_fetch_array($result);
      $fornavn = $res['Fornavn'];
      $etternavn = $res['Etternavn'];
      $epost = $res['Epost'];
- 
 }
-
-?>
+  ?>
 
 <!doctype html>
 
@@ -33,7 +29,7 @@ $res = mysqli_fetch_array($result);
 <title>Send Epost</title>
 </head>
 <body>
-    
+
 
 <form method="post" action="<?php echo $_SERVER['PHP_SELF']; ?>">
 
@@ -51,7 +47,8 @@ $res = mysqli_fetch_array($result);
   
 </form>
 
-
-
+<?php
+include ("../controllers/sendeEpost.php");
+?>
 </body>
 </html>

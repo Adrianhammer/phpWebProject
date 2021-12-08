@@ -2,8 +2,6 @@
 include "../../includes/includeDB.php";
 include "../../includes/session.php";
 
-
-
 if(isset($_REQUEST['submit'])) {
     
     // Lage variabler
@@ -55,7 +53,7 @@ if(isset($_REQUEST['submit'])) {
 if ($resultat) {
     echo "Følgende aktvititet er registrert:<br>";
     echo "<br>";
-    echo "<br><strong>Inormasjon registrert:</strong><br>";
+    echo "<br><strong>Informasjon registrert:</strong><br>";
     
     // Henter en rad om gangen fra databasen (dvs. ett og ett medlem)
     while( $row = $resultat->fetch_assoc() ) 

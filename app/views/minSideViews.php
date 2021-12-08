@@ -65,7 +65,8 @@ $data = mysqli_fetch_array($records);
   <p class="title">Land: <?php echo $data["Adresse"]; ?></p>
   <p class="title">Fødselsdato: <?php echo $data["Fødselsdato"]; ?></p>
 
-  <p><button>Endre info</button></p>
+  
+  <p><a href="../controllers/endreMedlemForm.php? id=<?php echo $data['ID']?>;"><button>Endre info</button></a></p>
 </div>
 
 

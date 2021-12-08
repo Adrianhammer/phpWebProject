@@ -21,7 +21,6 @@ $resultat = $stmt->get_result();
 
 ?>
 
-        <!-- Lager en tabell som viser de aktuelle konkuransene -->
         
         <table border="1" cellpadding="5" align="center" style="text-align:center">
         <tr>
@@ -47,9 +46,8 @@ $resultat = $stmt->get_result();
 
 <?php 
 
-// Henter en rad om gangen fra databasen (dvs. ett og ett medlem)
 while( $row = $resultat->fetch_assoc() ) 
-    { // Opening while
+    { 
 
 ?>
     <tr>
@@ -75,17 +73,13 @@ while( $row = $resultat->fetch_assoc() )
     </tr>
 
     <?php
-        } // Closing while
+        } 
 
-        // Avslutter spørring 
         $stmt->close();
     ?>
     </table>
     
     <?php 
-        // Avslutter databasetilkobling
         $conn->close();
-
-
 
 ?>

@@ -1,10 +1,7 @@
 <?php
 include ("../../includes/session.php");
-include ("../controllers/registrereMedlemControllers.php");
 include ("../../includes/navbar.php");
 include ("../../includes/Footer.php");
-
-
 
 ?>
 
@@ -62,5 +59,12 @@ include ("../../includes/Footer.php");
   
 </form>
 </pre>
+
+<?php
+include ("../controllers/registrereMedlemControllers.php");
+?>
+
+<br /><br/><br/>
+
 </body>
 </html>
