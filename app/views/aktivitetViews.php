@@ -1,7 +1,7 @@
 <?php
 include ("../../includes/navbar.php");
-include ("../controllers/lageAktivitet.php");
 include ("../../includes/Footer.php");
+include ("../../includes/includeDB.php");
 ?>
 
 <html lang="en">
@@ -13,7 +13,7 @@ include ("../../includes/Footer.php");
 </head>
 <body>
     
-    <form action="visAktivitet.php" method="get">
+    <form action="../controllers/lageAktivitet.php" method="get">
         Aktivitet: 
         <br><select name="aktivitet">
             <option value="select" disable selected>--Velg Aktivitet--</option>
@@ -63,6 +63,7 @@ include ("../../includes/Footer.php");
 
 <?php
 
+
 $sql = "SELECT * FROM aktiviteter order by AktivitetID";
 
 // Setter sammen spørringen til tilkoblingen
@@ -77,9 +78,7 @@ $stmt->execute();
 // Henter resultat
 $resultat = $stmt->get_result();
 
-?>
-
-        
+?>      
         <table border="1" cellpadding="5" align="center" style="text-align:center">
         <tr>
             <th>AktivitetID</th>
@@ -89,14 +88,15 @@ $resultat = $stmt->get_result();
             <th>Slutttid</th>
             <th>Dato</th>
             <th>Slett</th>
-        </tr>
 
+        </tr>
 <?php 
 
-while( $row = $resultat->fetch_assoc() ) 
-    { 
-
-?>
+    if ($resultat) {        
+        while( $row = $resultat->fetch_assoc() ) 
+        {
+            ?>
+        
     <tr>
         <td><?php echo $row['AktivitetID']; ?></td>
         <td><?php echo $row['Aktivitet']; ?></td>
@@ -105,18 +105,16 @@ while( $row = $resultat->fetch_assoc() )
         <td><?php echo $row['Slutttid']; ?></td>
         <td><?php echo $row['Dato']; ?></td>
         <td><a href="../controllers/slettAktivitet.php? AktivitetID=<?php echo $row['AktivitetID']?>;">Slett aktivitet</a></td>
-
     </tr>
-    <?php
-        } 
+<?php
+        }
+    }
 
         $stmt->close();
     ?>
     </table>
-    
     <?php 
         $conn->close();
-
 ?>
 
 </body>
