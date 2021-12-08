@@ -38,9 +38,9 @@ $resultat = $stmt->get_result();
             <th>Medlem siden</th>
             <th>Interesser</th>
             <th>Kursaktiviteter</th>
-            <th>Kontigentstatus</th>
             <th>Rolle 1</th>
             <th>Rolle 2</th>
+            <th>Kontigentstatus</th>
             <th>Endre</th>
             <th>Slett</th>
         </tr>
@@ -56,7 +56,7 @@ while( $row = $resultat->fetch_assoc() )
         <td><?php echo $row['Fornavn']; ?></td>
         <td><?php echo $row['Etternavn']; ?></td>
         <td><?php echo $row['Brukernavn']; ?></td>
-        <td><?php echo $row['Epost']; ?></td>
+        <td><a href="../views/epostViews.php? id=<?php echo $row['ID']?>"><?php echo $row['Epost']; ?></a></td>
         <td><?php echo $row['Mobilnummer']; ?></td>
         <td><?php echo $row['Adresse']; ?></td>
         <td><?php echo $row['Postnummer']; ?></td>
