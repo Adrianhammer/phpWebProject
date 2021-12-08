@@ -9,5 +9,5 @@ Web project for university.
 ![Nav map](https://i.imgur.com/yzbebtd.png)
 
 # Brukernavn&Passord
-+ Brukernavn: Petrus
-+ Passord: Test
++ Brukernavn: test
++ Passord: test
