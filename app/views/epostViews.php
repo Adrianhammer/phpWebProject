@@ -46,6 +46,7 @@ $res = mysqli_fetch_array($result);
 
 <?php
 include ("../controllers/sendeEpost.php");
+
 } else {
   ?>
 
@@ -65,6 +66,8 @@ include ("../controllers/sendeEpost.php");
   
 </form>
 <?php  
+
+include ("../controllers/sendeEpost.php");
 }
 ?>
 </body>

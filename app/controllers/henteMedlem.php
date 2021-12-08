@@ -8,7 +8,6 @@
         $fromDate = $_REQUEST['fromDate'];
         $toDate = $_REQUEST['toDate'];
         
-    // Lager SQL spørringen som jeg skal bruke i $sql variablen.
     
     include ("../models/henteMedlemModels.php");
 

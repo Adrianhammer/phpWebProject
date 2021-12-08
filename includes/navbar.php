@@ -45,7 +45,7 @@ body {
   <a href="endreMedlemViews.php">Endre medlemmer</a>
   <a href="aktivitetViews.php">Aktiviteter</a>
   <a href="MinSideViews.php">Min side</a>
-  <a href="../controllers/sorterEtter.php">Sorter Etter</a>
+  <a href="sorterEtterViews.php">Sorter Etter</a>
  
 
   

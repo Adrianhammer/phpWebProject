@@ -11,14 +11,10 @@ $sql = "INSERT INTO aktiviteter (Aktivitet, Ansvarlig, Starttid, Slutttid, Dato)
     // Setter sammen spørringen til tilkoblingen
     $stmt = $conn->prepare( $sql );
 
-    // Binder variablene sammen med SQL statementen.
-    //mysqli_stmt_bind_param($stmt, "sssss", $$aktivitet, $$ansvarlig, $timeFrom, $timeTo, $fromDate);
-
     // Utfører spørring
     $stmt->execute();
 
     // Henter resultat
     $resultat = $stmt->get_result();
-
     
 ?>
