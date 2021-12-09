@@ -12,8 +12,6 @@
 
 ## Krav
 * XAMPP (MYSQL, Apache)
-* Fler krav for å kjøre prosjektet?
-
 
 
 -----
