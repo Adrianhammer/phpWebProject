@@ -1,11 +1,10 @@
 <?php
 
-//include ("../controllers/registrereMedlemControllers.php");
 
-$sql = "INSERT INTO medlemmer (Fornavn, Etternavn, Epost, Passord, Mobilnummer, Adresse, Kjønn, Fødselsdato, Interesser, Kursaktiviteter, Kontigentstatus) 
-        VALUES ('$fnavn', '$enavn', '$epost', '$passord', '$mobilnummer', '$adresse', '$kjønn', '$fdato', '$interesser', '$kursaktiviteter', '$kontigentstatus')";
-
-$query = mysqli_query($conn, $sql);
+$sql = "INSERT INTO medlemmer (Fornavn, Etternavn, Brukernavn, Epost, Passord, Mobilnummer, Adresse, Postnummer, Poststed, Kjønn, Fødselsdato, MedlemSiden, Interesser, Kursaktiviteter, Rolle1, Rolle2, Kontigentstatus) 
+    VALUES ('$fnavn', '$enavn', '$bnavn', '$epost', '$passord', '$mobilnummer', '$adresse', '$postnummer', '$poststed', '$kjønn', '$fdato', '$medlemsiden', '$interesser', '$kursaktiviteter', '$rolle1', '$rolle2', '$kontigentstatus')";
+ 
+ $query = mysqli_query($conn, $sql);
 
 // Henter inn kun medlemmet hvor Navn og Etternavn er det samme som variabel inputten.
 $sql = "SELECT * FROM medlemmer WHERE Fornavn = ? AND Etternavn = ?"; 

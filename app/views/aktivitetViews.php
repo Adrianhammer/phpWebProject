@@ -1,10 +1,9 @@
 <?php
 include ("../../includes/navbar.php");
-include ("../controllers/lageAktivitet.php");
 include ("../../includes/Footer.php");
-
-
+include ("../../includes/includeDB.php");
 ?>
+
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -14,7 +13,7 @@ include ("../../includes/Footer.php");
 </head>
 <body>
     
-    <form action="lageAktivitet.php" method="get">
+    <form action="../controllers/lageAktivitet.php" method="get">
         Aktivitet: 
         <br><select name="aktivitet">
             <option value="select" disable selected>--Velg Aktivitet--</option>
@@ -61,5 +60,22 @@ include ("../../includes/Footer.php");
         
         <br><input type="submit" name="submit" value="Insert">
     </form>
+
+
+    <table border="1" cellpadding="5" align="center" style="text-align:center">
+        <tr>
+            <th>AktivitetID</th>
+            <th>Aktivitet</th>
+            <th>Ansvarlig</th>
+            <th>Starttid</th>
+            <th>Slutttid</th>
+            <th>Dato</th>
+            <th>Slett</th>
+        </tr>
+
+<?php
+include ("../controllers/aktivitetController.php");
+?>
+
 </body>
 </html>

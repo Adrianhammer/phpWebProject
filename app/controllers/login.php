@@ -27,6 +27,7 @@
         if($sjekkPass === TRUE) {
             //Passord matcher, setter session:
             session_start();
+            $_SESSION['Brukernavn'] = $bruker['Brukernavn'];
             $_SESSION['Etternavn'] = $bruker['Etternavn'];
             $_SESSION['Fornavn'] = $bruker['Fornavn'];
 

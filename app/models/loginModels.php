@@ -5,8 +5,8 @@ $brukernavn = $_REQUEST['bnavn'];
 $passord = $_REQUEST['pord'];
 
 // Lager spørring
-$sql = "SELECT Fornavn, Etternavn, Passord
-        FROM medlemmer WHERE Fornavn = ?";
+$sql = "SELECT Fornavn, Etternavn, Brukernavn, Passord
+        FROM medlemmer WHERE Brukernavn = ?";
 
 // Initialiserer spørringen og forberederen den m/ error catch
 $stmt = mysqli_stmt_init($conn);

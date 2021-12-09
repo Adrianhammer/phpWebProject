@@ -14,6 +14,7 @@ include ("../../includes/Footer.php");
 </head>
 <body>
 <h2>Velkommen til medlemssystemets hjemmeside</h2><br><br> 
+<h1>HUSK PULL FØR PUSH</h1>
 
 
 

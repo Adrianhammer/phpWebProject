@@ -1,19 +1,22 @@
 <?php
-    // Include fil med passord:
-    include_once "../../includes/includeDB.php";
+ include_once "../../includes/includeDB.php";
 
-    
-    if(isset($_REQUEST['hent-medlem'])) {
+    if(isset($_REQUEST['Søk'])) {
+
+        // Variabler 
+        $felt1 = $_REQUEST['felt'];
+        $felt2 = $_REQUEST['felt2'];
+
+        include ("../models/sorterEtterModels.php");
         
-        $fromDate = $_REQUEST['fromDate'];
-        $toDate = $_REQUEST['toDate'];
-        
-    
-    include ("../models/henteMedlemModels.php");
+        //Sjekker for om spørringen kommer med 0 rader tilbake.
+        if (mysqli_num_rows($resultat) === 0) {
+            echo "Det finnes ingen medlemmer med '<b>$felt1</b>' som '<b>$felt2</b>'.<br><br>";
+            exit(); //Avslutter scriptet her hvis det ikke finnes medlemmer med valgt interesse
+        }
+        ?>
 
-    ?>
-
-    <html>
+<html>
             <!-- Lager en tabell som viser de aktuelle konkuransene -->
             <table border="1" cellpadding="5" align="center" style="text-align:center">
             <tr>

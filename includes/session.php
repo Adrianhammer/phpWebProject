@@ -1,6 +1,6 @@
 <?php
     session_start();
-    if(isset($_SESSION["Fornavn"]) !== true) {
+    if(isset($_SESSION["Brukernavn"]) !== true) {
         header("Location: ../views/loginViews.php");
         exit();
     } else{

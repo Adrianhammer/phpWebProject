@@ -50,26 +50,27 @@ button:hover {
 <?php
 
 
-
-while($data = mysqli_fetch_array($records)) {
+$data = mysqli_fetch_array($records);
     ?>
 
 <br /><br /><br />
 
 <div class="card">
-  <img src="/assets/img/team2.jpg" alt="Profil bilde" style="width:100%">
+  <img src="../../assets/img/team2.jpg" alt="Profil bilde" style="width:100%">
   <h1><?php echo $_SESSION["Fornavn"], " ", $_SESSION["Etternavn"]?></h1>
+  <p class="title">Brukernavn: <?php echo $data["Brukernavn"]; ?></p>
   <p class="title">Bruker ID:<?php echo $data["ID"]; ?></p>
   <p class="title">Epost: <?php echo $data["Epost"]; ?></p>
   <p class="title">Mobilnummer: <?php echo $data["Mobilnummer"]; ?></p>
-  <p class="title">Land: <?php echo $data["Adresse"]; ?></p>
+  <p class="title">Adresse: <?php echo $data["Adresse"];?></p>
+  <p class="title">Postnummer: <?php echo $data["Postnummer"];?></p>
+  <p class="title">Poststed: <?php echo $data["Poststed"];?></p>
   <p class="title">Fødselsdato: <?php echo $data["Fødselsdato"]; ?></p>
 
-  <p><button>Endre info</button></p>
+  
+  <p><a href="endreMedlemFormV.php? id=<?php echo $data['ID']?>;"><button>Endre info</button></a></p>
 </div>
-<?php
-}
-?>
+
 
 
 
