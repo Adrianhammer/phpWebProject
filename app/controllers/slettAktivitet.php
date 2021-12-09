@@ -23,4 +23,3 @@ header("Location: ../views/aktivitetViews.php");
 ?>
 
 
-<a href="../views/aktivitetViews.php">Gå tilbake</a>

@@ -13,13 +13,8 @@ include ("../../includes/Footer.php");
     <title>Hjem</title>
 </head>
 <body>
-<h2>Velkommen til medlemssystemets hjemmeside</h2><br><br> 
-<h1>HUSK PULL FØR PUSH</h1>
-
-
-
-
-
+<h2>Velkommen til Neo ungdomsklubb!</h2><br><br> 
+<img src="../../assets/img/logo.jpg" alt="homepage" style="">
 
 
 
@@ -29,6 +24,11 @@ include ("../../includes/Footer.php");
 <input type="submit" name="loggut" value="Logg Ut">
 </form>
 
+
+
+
 </body>
+
+
 </html>
 
