@@ -69,6 +69,28 @@ $res = mysqli_fetch_array($result);
   
 </form>
 
+<br>
+
+<form method="post">
+<select name="KontigentStatus" required> 
+
+<?php
+
+$sql = mysqli_query($conn, "SELECT * FROM medlemmer WHERE Kontigentstatus = 'Ikke betalt' ");
+
+while ($rad = $sql->fetch_assoc()){
+  ?>
+
+  <option value="<?php echo $rad['Kontigentstatus'];?>"><?php echo $rad['Kontigentstatus'];?></option>
+  
+  <?php
+  } 
+  ?>
+
+ </select>
+ <input type="submit" name="send-ikkebetalt" value="Ikke betalt">
+ </form>
+
 <?php 
 } 
 ?>
