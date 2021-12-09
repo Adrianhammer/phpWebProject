@@ -12,6 +12,8 @@
 
 ## Krav
 * XAMPP (MYSQL, Apache)
+* Legg repo i htdocs mappa:
+* \xampp\htdocs\phpWebProject
 
 
 -----
@@ -20,6 +22,7 @@
 * Login
 * CRUD
 * E-post
+* Min side
 * Aktiviteter
 * Sortering
 
