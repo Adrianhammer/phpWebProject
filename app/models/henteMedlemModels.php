@@ -1,6 +1,6 @@
 <?php
 
-$sql = "SELECT * FROM medlemmer WHERE MedlemSiden BETWEEN ? AND ? ORDER BY Fødselsdato";
+$sql = "SELECT * FROM medlemmer WHERE MedlemSiden BETWEEN ? AND ? ORDER BY ID";
 
     // Setter sammen spørringen til tilkoblingen
     $stmt = $conn->prepare($sql);
