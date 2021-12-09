@@ -43,7 +43,9 @@
 
 -----
 
-## Preview (tenkte å ha gif av systemet lol)?
+## Preview
+![Preview](https://i.imgur.com/hxYHTte.gif)
+
 
 
 -----
