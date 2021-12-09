@@ -12,7 +12,6 @@ if(isset($_REQUEST['send-epost'])) {
 $navn = $_REQUEST['navn'];
 $enavn = $_REQUEST['enavn'];
 
-//$kode = "abc"; // Spiller ingen rolle.
 $epost = $_REQUEST['epost']; //Din epost.
 
 

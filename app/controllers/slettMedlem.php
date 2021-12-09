@@ -25,4 +25,3 @@ header("Location: ../views/endreMedlemViews.php");
 ?>
 
 
-<a href="../views/endreMedlemViews.php">Gå tilbake</a>
