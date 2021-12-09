@@ -1,4 +1,4 @@
-# Project README IS-115 PHP Webprogrammering
+# Prosjekt IS-115 PHP Webprogrammering
 
 **Dette er et medlemssystem for NEO ungdomsklubb. I dette systemet konsentrerer vi oss om *en* type bruker: leder/admin.**
 
@@ -7,7 +7,7 @@
 
 
 
-## Requirements
+## Krav
 * XAMPP (MYSQL, Apache)
 * Fler krav for å kjøre prosjektet?
 
@@ -37,13 +37,13 @@
 
 
 
-## Navigation map
+## Navigasjonskart
 ![Nav map](https://i.imgur.com/yzbebtd.png)
 
 
 -----
 
-## Preview
+## Preview (tenkte å ha gif av systemet lol)?
 
 
 -----
