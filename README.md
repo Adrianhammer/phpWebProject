@@ -1,6 +1,9 @@
 # Prosjekt IS-115 PHP Webprogrammering
 
+![Nav map](https://i.imgur.com/n89rOiG.png)
+
 **Dette er et medlemssystem for NEO ungdomsklubb. I dette systemet konsentrerer vi oss om *en* type bruker: leder/admin.**
+
 
 
 -----
