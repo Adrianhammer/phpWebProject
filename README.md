@@ -8,6 +8,13 @@
 
 -----
 
+## Preview
+![Preview](https://i.imgur.com/WDRr0MW.gif)
+
+
+
+-----
+
 
 
 ## Krav
@@ -44,12 +51,6 @@
 
 ## Navigasjonskart
 ![Nav map](https://i.imgur.com/yzbebtd.png)
-
-
------
-
-## Preview
-![Preview](https://i.imgur.com/WDRr0MW.gif)
 
 
 
