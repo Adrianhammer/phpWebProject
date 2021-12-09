@@ -129,7 +129,7 @@ if(isset($_REQUEST['send-ikkebetalt'])) {
     
             /* Meldingstekst for de som ikke kan motta HTML-epost */
             $amld  = "Kjære bruker <br><br>";
-            $amld .= "Dette er en test<br><br>";
+            $amld .= "Du har ikke betalt kontigenten din for denne måneden<br><br>";
             
                 
             $mail->isHTML(true);
@@ -138,13 +138,18 @@ if(isset($_REQUEST['send-ikkebetalt'])) {
             $mail->Subject = "Registrering: kun ett steg unna nå!";
             $mail->Body = "<img src=\"cid:logo\" /><br>" . $mld . $footer;
             $mail->AltBody = $amld;
-            echo "E-post er sendt<br>";
             } catch(Exception $e) {
             echo "Noe gikk galt: " . $e->getMessage();
             }
         }
         $mail->send();
+        
+        if($mail) {
+            echo '<script type="text/javascript"> alert("Epost sendt til de som ikke har betalt")</script>';
+        } else { 
+            echo '<script type="text/javascript"> alert("Epost ble ikke sendt")</script>';
         }
+    }
 
 ?>
 
