@@ -45,7 +45,7 @@
 -----
 
 ## Preview
-![Preview](https://i.imgur.com/hxYHTte.gif)
+![Preview](https://i.imgur.com/WDRr0MW.gif)
 
 
 
