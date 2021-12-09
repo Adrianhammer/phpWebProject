@@ -2,6 +2,7 @@
 include ("../../includes/session.php");
 include ("../../includes/navbar.php");
 include ("../../includes/Footer.php");
+include ("../../includes/session.php");
 
 ?>
 

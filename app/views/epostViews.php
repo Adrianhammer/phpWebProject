@@ -1,6 +1,7 @@
 <?php 
 include ("../../includes/navbar.php");
 include ("../../includes/Footer.php");
+include ("../../includes/session.php");
 include ("../../includes/includeDB.php");
 include ("../controllers/sendeEpost.php");
 
