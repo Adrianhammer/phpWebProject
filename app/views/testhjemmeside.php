@@ -14,7 +14,7 @@ include ("../../includes/Footer.php");
 </head>
 <body>
 <h2>Velkommen til Neo ungdomsklubb!</h2><br><br> 
-<img src="../../assets/img/logo.jpg" alt="homepage" style="">
+<img src="../../assets/img/logo.jpg" alt="homepage">
 
 
 
