@@ -32,8 +32,9 @@
 ## Setup
 * Kjør XAMPP
 * Kjør Apache og MYSQL
+* Importer SQL filen i phpMyAdmin [som ligger her](./conf/database/test1%20(2).sql)
 * Skriv inn i nettleser: http://localhost/phpWebProject/
-* Brukernavn: Admin
+* Brukernavn: Crashstappen
 * Passord: Test
 
 
