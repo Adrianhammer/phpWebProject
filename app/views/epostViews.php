@@ -1,6 +1,7 @@
 <?php 
 include ("../../includes/navbar.php");
 include ("../../includes/Footer.php");
+include ("../../includes/session.php");
 include ("../../includes/includeDB.php");
 include ("../controllers/sendeEpost.php");
 
@@ -68,9 +69,26 @@ $res = mysqli_fetch_array($result);
   
 </form>
 
+<br>
 <?php 
 } 
 ?>
+<form method="post">
+
+<?php
+
+$sql = mysqli_query($conn, "SELECT * FROM medlemmer WHERE Kontigentstatus = 'Ikke betalt' ");
+
+$rad = $sql->fetch_assoc()
+
+  ?>
+  
+  <p>Send til de som ikke har betalt kontigentstatus:</p>
+  <input type="submit" name="send-ikkebetalt" value="<?php echo $rad['Kontigentstatus'];?>">
+
+</form>
+
+
 
 </body>
 </html>

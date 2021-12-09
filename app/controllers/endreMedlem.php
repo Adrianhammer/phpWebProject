@@ -1,5 +1,4 @@
 <?php 
-include ("../../includes/session.php");
 include_once ("../../includes/includeDB.php");
 include ("../models/endreMedlemModels.php");
 
