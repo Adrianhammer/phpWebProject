@@ -1,5 +1,4 @@
 <?php 
-include "../../includes/session.php";
 use PHPMailer\PHPMailer\PHPMailer;
 use PHPMailer\PHPMailer\Exception;
 require '../../conf/vendor/autoload.php';

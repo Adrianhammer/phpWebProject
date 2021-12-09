@@ -1,6 +1,5 @@
 <?php
 include ("../../includes/includeDB.php");
-include ("../../includes/session.php");
 include ("../models/endreMedlemModels.php");
 
 $id = $_GET['id']; 
